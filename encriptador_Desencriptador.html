@@ -1,0 +1,92 @@
+<meta charset="UTF-8">
+<html>
+
+<head>
+	<link rel="stylesheet" href="hojaestilo.css">
+	
+</head>
+<body>
+		<header>
+			<h1 class="titulo"> Encriptador y desencriptador </h1>
+		</header>
+
+<label class="etiquetas">Introduce el Texto a convertir </label>
+<input  class="cajasTexto" placeholder="Introduce el texto" id="myinput" />
+<button  class="enviar" onclick="encriptar()">Encriptar</button>	
+<button  class="enviar" onclick="desencriptar()">Desencriptar</button>	
+<textarea class="content" name=textearea rows="10" cols="50" id="resultado">la frase es: </textarea>	
+<script>
+
+      	function encriptar(){  
+   		var rawtext = document.getElementById("myinput").value; 
+   		 var temptext = "";  
+
+   		 for(i = 0; i < rawtext.length; i++){
+   		   temptext += enc(rawtext[i]);  
+   		    }  
+   		    document.getElementById("resultado").innerHTML = temptext;  
+   		 }  
+
+   		 function desencriptar(){  
+   		var rawtext = document.getElementById("myinput").value; 
+   		 var temptext = "";  
+          
+   		 for(i = 0; i < rawtext.length; i++){
+   		   temptext += dec(rawtext[i]); 
+   		    }  
+   		    document.getElementById("resultado").innerHTML = temptext;  
+   		 } 
+   		  function enc(x){ 
+   		   switch(x){ 
+   		    case "a" : 
+   		    return "ai"; 
+   		    break; 
+   		    case "e" : 
+   		    return "enter";
+   		    break; 
+   		    case "i" : 
+   		    return "imes";
+   		    break; 
+   		    case "o" : 
+   		    return "ober";
+   		    break;
+   		    case "u" : 
+   		    return "ufat";
+   		    break;
+   		   default: 
+   		    return x;
+   		      }
+   		   } 
+          /* function decodificacion(e){
+           e = entrada.value.toLowerCase();
+           return e.replace(/ai|enter|imes|ober|ufat/gi,*/
+   		   function dec(x){ 
+   		   switch(x){ 
+   		    case "ai" : 
+   		    return "a"; 
+   		    break; 
+   		    case "enter" : 
+   		    return "e";
+   		    break; 
+   		    case "m" : 
+   		    return "i";
+   		    break; 
+   		    case "ober" : 
+   		    return "o";
+   		    break;
+   		    case "ufat" : 
+   		    return "us";
+   		    break;
+   		    default: 
+   		    return x;
+   		      }
+   		   //});
+   		 }
+
+
+</script>
+ <footer>
+                <p class="copyright">&copy Copyright Mireya Noemi Arroyos Rodriguez- 2023</p>
+</footer>
+</body> 
+</html>
